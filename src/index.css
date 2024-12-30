@@ -1,3 +1,83 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.app {
+  @apply min-h-screen max-h-full bg-gray-100 dark:bg-gray-800 dark:text-gray-100 transition-colors;
+}
+
+.toggle-container {
+  @apply relative;
+}
+
+.dark-toggle {
+  @apply dark:text-white text-3xl absolute top-5 sm:right-10 right-5;
+}
+
+/* #region Search Form */
+.search-form-container {
+  height: 28vh;
+  @apply flex flex-col justify-around items-center w-full;
+}
+
+.title {
+  @apply text-4xl font-bold mt-10;
+}
+
+.search-form {
+  position: relative;
+  width: min-content;
+  height: min-content;
+}
+
+.search-input {
+  @apply w-[40rem] focus:w-[45rem] h-10 rounded-full px-5 outline-none focus:outline-none duration-200 transition-all text-gray-900 placeholder:text-gray-400 dark:bg-gray-200 max-md:w-80 max-md:focus:w-96;
+}
+
+.search-icon {
+  @apply absolute right-4 top-2 text-2xl text-gray-800 hover:text-gray-950;
+}
+
+
+/* #endregion Search Form */
+
+/* #region Gallery */
+
+.loading-spinner {
+  @apply size-16 border-4 border-t-gray-900 border-gray-300 rounded-full animate-spin-fast;
+}
+
+.gallery {
+  @apply pb-10;
+}
+
+.gallery-container {
+  @apply grid gap-4 place-items-center container max-md:grid-cols-1;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.img-container {
+  @apply w-72 h-72 relative max-sm:h-64 max-sm:w-96;
+}
+
+.image {
+  @apply w-full h-full object-cover;
+}
+
+.img-static-container {
+  @apply absolute bottom-0 left-0 right-0 py-2 px-4 text-white duration-500 bg-black opacity-0 group-hover:opacity-100 bg-opacity-40;
+}
+
+.img-statics {
+  @apply flex justify-between w-full;
+}
+
+.img-info {
+  @apply font-normal;
+}
+
+.img-url {
+  @apply flex items-center cursor-pointer hover:scale-110 duration-150;
+}
+
+/* #endregion Gallery */
